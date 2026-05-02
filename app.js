@@ -17,8 +17,10 @@ const {pendingregister} = require('./Router/PendingStudentRouter')
 const bcrypt = require('bcrypt')
 
 // ✅ CORS middleware added here
-app.use(cors());
-
+app.use(cors({
+  origin: 'https://gecj-tpo-2026-1.vercel.app',
+  credentials: true
+}));
 // middleware
 app.use(express.json());
 const path = require('path');
