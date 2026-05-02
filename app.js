@@ -18,7 +18,7 @@ const bcrypt = require('bcrypt')
 
 // ✅ CORS middleware added here
 app.use(cors({
-  origin: 'https://gecj-tpo-2026-1.vercel.app',
+  origin: '*',
   credentials: true
 }));
 // middleware
