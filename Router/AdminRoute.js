@@ -5,12 +5,11 @@ const cookiesParser = require('cookie-parser')
 cookiesParser()
 
 exports.AdminLogin = async (req, res) => {
-    // console.log("enter")
     try {
-        const { identifier, password } = req.body;
+        const { email, password } = req.body;
 
         // 1. Find Admin
-        const find = await Admin.findOne({ email: identifier });
+        const find = await Admin.findOne({ email: email });
 
         if (find) {
             // 2. Use bcrypt to compare the hashed password
