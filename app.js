@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 // routes
 app.use('/api/student/pendingregister',pendingregister)
 
-app.use('/api/students/register', upload.single('photo'), registerStudent);
+app.use('/api/students/register', registerStudent);
 app.use('/get/student/profile/:id', StudentProfile)
 app.use('/get/studentProfile/id/:id', StudentProfile)
 app.use('/get/students', getStudents);

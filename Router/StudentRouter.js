@@ -19,7 +19,7 @@ exports.registerStudent = async (req, res) => {
     const parsedSkills =
       typeof skills === 'string' ? JSON.parse(skills) : skills;
 
-    const photoPath = req.file ? `/uploads/${req.file.filename}` : null;
+    // const photoPath = req.file ? `/uploads/${req.file.filename}` : null;
 
     const savedStudent = await Student.create({
       name,
@@ -29,7 +29,7 @@ exports.registerStudent = async (req, res) => {
       session,
       dept,
       skills: parsedSkills,
-      photo: photoPath
+      photo: req.body.photo || null
     });
     res.status(201).json(savedStudent);
 
